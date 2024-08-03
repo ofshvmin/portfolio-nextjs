@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import meImage from '@/public/me.png'
+import githubme from '@/public/githubme.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import{ BsArrowRight, BsLinkedin } from 'react-icons/bs'
@@ -23,7 +24,7 @@ export default function Intro() {
             }}
           >
             <Image 
-              src= {meImage}
+              src= {githubme}
               alt='an image of me'
               width='192'
               height='192'
@@ -70,20 +71,27 @@ export default function Intro() {
       >
         <Link 
           href="#contact"
-          className='bg-gray-900 text-white px-7 py-3 flex items-center gap-2 px-4 rounded-full'
-          >Contact me here <BsArrowRight /> </Link>
+          className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 px-4 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition'
+          >Contact me here <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition'/> </Link>
         <a 
-          className='bg-white px-7 py-3 flex items-center gap-2 rounded-full'
+          href='/resume.pdf' download={true}
+          className='group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10'
           
-          >Download Resume <HiDownload /></a>
+          >Download Resume <HiDownload 
+          className='opacity-60 group-hover:translate-y-1 transition'
+          /></a>
         <a 
-          className='bg-white p-4 flex items-center gap-2 rounded-full'
+          href='https://www.linkedin.com/in/daniel-g-mathews/'
+          target='_blank'
+          className='bg-white p-4 flex items-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border border-black/10'
         
         >
           <BsLinkedin />
         </a>
         <a 
-          className='bg-white p-4 flex items-center gap-2 text-[1.25rem] rounded-full'
+          href='https://github.com/ofshvmin'
+          target='_blank'
+          className='bg-white p-4 flex items-center gap-2 text-[1.25rem] rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border border-black/10'
         
         >
           <FaGithubSquare />
