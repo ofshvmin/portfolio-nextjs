@@ -73,7 +73,7 @@ export const projectsData = [
     title: "Trail Rider",
     description:
     "A booking system for a local business.",
-    tags: ["React", "TypeScript", "Next.js"],
+    tags: ["EJS", "Node.js", "Express", "Mongoose", "MongoDB", "Google OAth"],
     imageUrl: trailrider,
   },
   {
