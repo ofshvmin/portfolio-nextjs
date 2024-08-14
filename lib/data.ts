@@ -3,6 +3,9 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import newsLingoImg from "@/public/newsLingo.png";
+import rabbitHole from "@/public/rabbithole.png"
+import trailrider from "@/public/trailrider.png"
+import easterwordle from "@/public/easterwordle.png"
 
 export const links = [
   {
@@ -67,18 +70,25 @@ export const projectsData = [
     imageUrl: newsLingoImg,
   },
   {
-    title: "rmtDev",
+    title: "Trail Rider",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: newsLingoImg,
+    "A booking system for a local business.",
+    tags: ["React", "TypeScript", "Next.js"],
+    imageUrl: trailrider,
   },
   {
-    title: "Word Analytics",
+    title: "Rabbit Hole",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: newsLingoImg,
+      "A social media app inspired by TikTok.",
+    tags: ["React", "TypeScript", "Next.js"],
+    imageUrl: rabbitHole,
+  },
+  {
+    title: "Wordle: Easter Edition",
+    description:
+      "A wordle clone styled in the theme of Easter.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    imageUrl: easterwordle,
   },
 ] as const;
 
