@@ -1,6 +1,5 @@
 'use client'
 
-
 import Image from 'next/image'
 // import meImage from '@/public/me.png'
 import githubme from '@/public/githubme.png'
@@ -16,20 +15,20 @@ export default function Intro() {
 
   return (
     <section
-    ref={ref}
+      ref={ref}
       id='home'
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className='flex items-center justify-center'>
-        <div className='relative'>
-          <motion.div 
+      <div className='relative'>
+        <motion.div 
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "tween",
               duration: 0.2,
             }}
-          >
+        >
             <Image 
               src= {githubme}
               alt='an image of me'
