@@ -24,7 +24,7 @@ const { ref } = useSectionInView('About')
       <p className="mb-3">
         After working for 10+ years in {" "}
         <span className="font-medium">Finance Operations</span>, I decided to pursue my
-        passion for software engineering. I enrolled in a coding bootcamp and learned{" "}
+        passion for software engineering and I enrolled in a coding bootcamp where I learned{" "}
         <span className="font-medium">full-stack web development</span>.{" "}
         <span className="italic">My favorite part of programming</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
@@ -33,17 +33,17 @@ const { ref } = useSectionInView('About')
         <span className="font-medium">
           React, Next.js, Node.js, and MongoDB
         </span>
-        . I am also familiar with TypeScript, Prisma, Python and posgreSQL. I am always looking to learn new technologies. I am currently looking for a{" "}
+        . I am also familiar with TypeScript, Python, Java, and posgreSQL. I am always looking to learn new technologies. I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a software
         developer.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
+        <span className="italic">When I'm not coding</span>, I enjoy
         horseback riding, listening to audio books, and knitting. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
+        <span className="font-medium">learning new things</span>. At the moment I'm diving deep into
         learning about{" "}
-        <span className="font-medium">historical fiber-working techniques </span>. I'm also constantly working at my life-long endeavor to learn how to play the cello.
+        <span className="font-medium">historical fiber-working techniques</span>. I'm also constantly working at my life-long endeavor to learn how to play the cello.
       </p>
     </motion.section>
   )

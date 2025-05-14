@@ -37,7 +37,7 @@ export const links = [
 export const experiencesData = [
   {
     title: "Graduated bootcamp",
-    location: "Remote",
+    location: "General Assembly - Remote",
     description:
       "I graduated after 3 months of intensive study. I immediately began freelance work as a full-stack developer.",
     icon: React.createElement(LuGraduationCap),
@@ -45,7 +45,7 @@ export const experiencesData = [
   },
   {
     title: "Full-Stack Developer",
-    location: "Finger Lakes Region, NY",
+    location: "Freelance - Finger Lakes Region, NY",
     description:
     "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
@@ -53,9 +53,17 @@ export const experiencesData = [
   },
   {
     title: "Product Manager",
-    location: "New York, NY",
+    location: "Bank of NY Mellon - New York, NY",
     description:
-      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon. I planned development of new software from prioritization, writing requirements, obtaining sign-off from business stakeholders, executing testing, and managing implementation.",
+      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon. I planned development of new software from prioritization, writing requirements, obtaining sign-off from business stakeholders, executing testing, and managing implementation. I am still employed by the bank but currently on leave of absence while I pursue a transition to the engineering side of things.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2021 - 2023",
+  },
+  {
+    title: "Head of Asset Servicing Client Services",
+    location: "Goldman Sachs - New York, NY",
+    description:
+      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon. I planned development of new software from prioritization, writing requirements, obtaining sign-off from business stakeholders, executing testing, and managing implementation. I am still employed by the bank but currently on leave of absence while I pursue a transition to the engineering side of things.",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
