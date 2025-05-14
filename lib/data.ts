@@ -55,7 +55,7 @@ export const experiencesData = [
     title: "Product Manager",
     location: "Bank of NY Mellon, New York, NY",
     description:
-      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon. I planned development of new software from prioritization, writing requirements, obtaining sign-off from business stakeholders, executing testing, and managing implementation. I continued to leverage my knowledge of SQL and began to learn JavaScript as I partnered with our engineers to build client-facing APIs that facilitated real-time exchange of events and transactions. I am still employed by the bank but am currently on leave of absence while I pursue a transition to the engineering side of things.",
+      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon, where I planned development of new software from prioritization, writing requirements, obtaining sign-off from key stakeholders, executing testing, and managing implementation. I continued to leverage my knowledge of SQL and began to learn JavaScript, partnering with our engineers to build client-facing APIs to provide real-time data on market events and client transactions. I am still employed by the bank but am currently on leave of absence while I pursue a transition to the engineering side of things.",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
@@ -65,7 +65,7 @@ export const experiencesData = [
     description:
       "At Goldman I developed deep expertise in the complexities of financial operations at the highest level.  Building on that technical expertise, I undertook several initiatives to modernize our client service offerings through strategic investment in technology enhancements, while using the same opportunities to enhance controls around operational risk. It was in this role that I first got a taste for coding by learning SQL to undertake data analysis independent of our engineering teams.",
     icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2023",
+    date: "2014 - 2020",
   },
 ] as const;
 
