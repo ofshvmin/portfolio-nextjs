@@ -63,7 +63,7 @@ export const experiencesData = [
     title: "Head of Asset Servicing Client Services",
     location: "Goldman Sachs & Co., New York, NY",
     description:
-      "At Goldman I developed deep expertise in the complexities of financial operations at the highest level.  Building on that technical expertise, I undertook several initiatives to modernize our client service offerings through strategiv investment in technology enhancements, while using the same opportunities to enhance controls around operational risk. It was in this role that I first got a taste for coding by learning SQL to undertake data analysis independent of our engineering teams.",
+      "At Goldman I developed deep expertise in the complexities of financial operations at the highest level.  Building on that technical expertise, I undertook several initiatives to modernize our client service offerings through strategic investment in technology enhancements, while using the same opportunities to enhance controls around operational risk. It was in this role that I first got a taste for coding by learning SQL to undertake data analysis independent of our engineering teams.",
     icon: React.createElement(CgWorkAlt),
     date: "2021 - 2023",
   },
