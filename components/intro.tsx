@@ -1,8 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-// import meImage from '@/public/me.png'
-import githubme from '@/public/githubme.png'
 import new_me from '@/public/new_me.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
