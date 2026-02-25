@@ -3,6 +3,7 @@
 import Image from 'next/image'
 // import meImage from '@/public/me.png'
 import githubme from '@/public/githubme.png'
+import new_me from '@/public/new_me.png'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import{ BsArrowRight, BsLinkedin } from 'react-icons/bs'
@@ -30,13 +31,13 @@ export default function Intro() {
             }}
         >
             <Image 
-              src= {githubme}
+              src= {new_me}
               alt='an image of me'
               width='288'
               height='288'
               quality='95'
               priority={true}
-              className='h-36 w-36 rounded-full object-cover border-[.35rem] border-white shadow-xl'
+              className='h-36 w-36 rounded-full object-cover object-[center_5%] border-[.35rem] border-white shadow-xl'
               />
         </motion.div>
 
