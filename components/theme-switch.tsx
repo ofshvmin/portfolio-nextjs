@@ -7,7 +7,9 @@ type Theme = 'light' | 'dark'
 
 
 export default function ThemeSwitch() {
-  const { theme, toggleTheme }= useTheme()
+  const { theme, toggleTheme, mounted }= useTheme()
+
+  if (!mounted) return null
 
   return (
     <button 

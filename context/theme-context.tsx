@@ -11,6 +11,7 @@ type ThemeContextProviderProps = {
 type ThemeContextType = {
   theme: Theme
   toggleTheme: () => void
+  mounted: boolean
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null)
@@ -19,7 +20,8 @@ export default function ThemeContextProvider({
   children
 }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>('light')
-    
+  const [mounted, setMounted] = useState(false)
+
   const toggleTheme = () => {
     if(theme === 'light') {
       setTheme('dark')
@@ -31,23 +33,26 @@ export default function ThemeContextProvider({
       document.documentElement.classList.remove('dark')
     }
   }
-  
+
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme') as Theme | null
-    
+
     if(localTheme) {
       setTheme(localTheme)
-      document.documentElement.classList.add("dark")
+      if (localTheme === 'dark') {
+        document.documentElement.classList.add('dark')
+      }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark')
-      document.documentElement.classList.add("dark")
+      document.documentElement.classList.add('dark')
     }
+    setMounted(true)
   }, [])
 
   return <ThemeContext.Provider value={{
-    theme, 
-    toggleTheme
-
+    theme,
+    toggleTheme,
+    mounted,
   }}>
     {children}
   </ThemeContext.Provider>

@@ -75,21 +75,23 @@ function TimelineEntry({
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
+  const { theme, mounted } = useTheme();
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline animate={false} lineColor="">
-        {experiencesData.map((experience, index) => (
-          <TimelineEntry
-            key={index}
-            experience={experience}
-            index={index}
-            theme={theme}
-          />
-        ))}
-      </VerticalTimeline>
+      {mounted && (
+        <VerticalTimeline animate={false} lineColor="">
+          {experiencesData.map((experience, index) => (
+            <TimelineEntry
+              key={index}
+              experience={experience}
+              index={index}
+              theme={theme}
+            />
+          ))}
+        </VerticalTimeline>
+      )}
     </section>
   );
 }
