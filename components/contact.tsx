@@ -3,21 +3,22 @@
 import React from 'react'
 import SectionHeading from './section-heading'
 import { useSectionInView } from '@/lib/hooks'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { sendEmail } from '@/actions/sendEmail'
 import SubmitBtn from './submit-btn'
 import toast from 'react-hot-toast'
 
 export default function Contact() {
   const { ref } = useSectionInView('Contact')
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <motion.section 
       id='contact'
       ref={ref}
-      className='mb-20 sm:mb-28 w-[min(100%,38rem)]'
+      className='mb-20 sm:mb-28 w-[min(100%,38rem)] scroll-mt-28'
       initial={{
-        opacity: 0,
+        opacity: shouldReduceMotion ? 1 : 0,
       }}
       whileInView={{
         opacity: 1,

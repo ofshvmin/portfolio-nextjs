@@ -73,16 +73,20 @@ export const projectsData = [
   {
     title: "NewsLingo",
     description:
-      "I worked as a full-stack developer within a team of three on this project. Users can view news articles in their target language, get instant translation of any word they click on, and favorite words to add a flashcard to their personal dictionary.",
+      "An interactive language learning platform serving foreign language news articles and on-demand word translation. This app was built in collaboration with two other developers.",
     tags: ["React", "Node.js", "MongoDB"],
     imageUrl: newsLingoImg,
+    githubUrl: "https://github.com/ofshvmin/newsLingo-front-end",
+    liveUrl: "https://news-lingo.netlify.app/",
   },
   {
     title: "Trail Rider",
     description:
     "A booking system for a local business.",
-    tags: ["EJS", "Node.js", "Express", "Mongoose", "MongoDB", "Google OAth"],
+    tags: ["EJS", "Node.js", "Express", "Mongoose", "MongoDB", "Google OAuth"],
     imageUrl: trailrider,
+    githubUrl: "https://github.com/ofshvmin/trail-rider",
+    liveUrl: "https://trail-rider.fly.dev/",
   },
   {
     title: "Rabbit Hole",
@@ -90,6 +94,8 @@ export const projectsData = [
       "A social media app inspired by TikTok.",
     tags: ["React", "TypeScript", "Next.js"],
     imageUrl: rabbitHole,
+    githubUrl: "https://github.com/ofshvmin/rabbit-hole-front-end",
+    liveUrl: "https://rabbity-hole.netlify.app/",
   },
   {
     title: "Wordle: Easter Edition",
@@ -97,6 +103,8 @@ export const projectsData = [
       "A wordle clone styled in the theme of Easter.",
     tags: ["JavaScript", "HTML", "CSS"],
     imageUrl: easterwordle,
+    githubUrl: "https://github.com/ofshvmin/wordle",
+    liveUrl: "https://easter-wordle.netlify.app/",
   },
 ] as const;
 

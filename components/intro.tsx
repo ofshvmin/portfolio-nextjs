@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import new_me from '@/public/new_me.png'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import{ BsArrowRight, BsLinkedin } from 'react-icons/bs'
 import{ HiDownload } from 'react-icons/hi'
@@ -11,6 +11,7 @@ import { useSectionInView } from '@/lib/hooks'
 
 export default function Intro() {
   const { ref } = useSectionInView('Home', 0.5)
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <section
@@ -20,8 +21,8 @@ export default function Intro() {
     >
       <div className='flex items-center justify-center'>
       <div className='relative'>
-        <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
+        <motion.div
+            initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "tween",
@@ -41,7 +42,7 @@ export default function Intro() {
 
         <motion.span
             className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
+            initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               type: "spring",
@@ -58,7 +59,7 @@ export default function Intro() {
 
       <motion.p
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hi there. I'm Daniel,</span> a{" "}
@@ -67,16 +68,16 @@ export default function Intro() {
         building responsive <span className="italic">sites & apps</span> that function intelligently to support your business and its operations. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
       </motion.p>
-      <motion.div 
+      <motion.div
         className='flex flex-col sm:flex-row items-center justify-center gap-2 text-lg font-medium'
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 100 }}
         animate={{ opacity: 1, y: 0 }}
             transition={{
             delay: 0.1}}
       >
         <Link 
           href="#contact"
-          className='group bg-gray-900 text-white px-10 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition'
+          className='group bg-gray-900 text-white px-10 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition dark:bg-gray-700 dark:hover:bg-gray-600'
           >Contact me here <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition'/> </Link>
         <a 
           href='/resume.pdf' download={true}

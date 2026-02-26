@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Resend } from "resend"
-import { validateSring } from "@/lib/utils"
+import { validateString } from "@/lib/utils"
 import { getErrorMessage } from "@/lib/utils"
 import ContactFormEmail from "@/email/contact-form-email"
 
@@ -15,12 +15,12 @@ export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail")
   const message = formData.get("message")
 
-  if(!validateSring(senderEmail, 500)) {
+  if(!validateString(senderEmail, 500)) {
     return {
       error: "Invalid sender email",
     }
   }
-  if(!validateSring(message, 5000)) {
+  if(!validateString(message, 5000)) {
     return {
       error: "Invalid message", 
     }

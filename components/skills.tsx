@@ -4,24 +4,25 @@ import React from 'react'
 import SectionHeading from './section-heading'
 import { skillsData } from '@/lib/data'
 import { useSectionInView } from '@/lib/hooks'
-import { animate, motion } from 'framer-motion'
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    }
-  })
-}
+import { motion, useReducedMotion } from 'framer-motion'
 
 export default function Skills() {
   const { ref } = useSectionInView('Skills')
+  const shouldReduceMotion = useReducedMotion()
+
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: shouldReduceMotion ? 0 : 0.05 * index,
+      }
+    })
+  }
 
   return (
     <section
