@@ -35,8 +35,8 @@ export default function Project({
       }}
       className='group mb-3 sm:mb-8 last:mb-0'
     >
-      <article 
-        className='bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20'>
+      <article
+        className='bg-gradient-to-br from-white to-purple-50/40 max-w-[42rem] border border-gray-200/70 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 shadow-md hover:shadow-lg hover:border-gray-300/80 transition-all sm:group-even:pl-8 dark:text-white dark:bg-[#0d1f3c] dark:hover:bg-[#162444] dark:border-blue-900/40'>
         <div className='pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[20rem]'>
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <p className='mt-2 leading-relaxed text-gray-700 dark:text-white/70'>{description}</p>
@@ -56,7 +56,7 @@ export default function Project({
               target='_blank'
               rel='noopener noreferrer'
               aria-label={`${title} GitHub repository`}
-              className='text-gray-700 hover:text-gray-900 dark:text-white/60 dark:hover:text-white transition text-xl'
+              className='text-gray-600 group-hover:scale-125 group-hover:text-gray-900 dark:text-white/60 dark:group-hover:text-white transition-all text-xl'
             >
               <FaGithub />
             </a>
@@ -65,7 +65,7 @@ export default function Project({
               target='_blank'
               rel='noopener noreferrer'
               aria-label={`${title} live demo`}
-              className='text-gray-700 hover:text-gray-900 dark:text-white/60 dark:hover:text-white transition text-xl'
+              className='text-gray-600 group-hover:scale-125 group-hover:text-gray-900 dark:text-white/60 dark:group-hover:text-white transition-all text-xl'
             >
               <BsBoxArrowUpRight />
             </a>
