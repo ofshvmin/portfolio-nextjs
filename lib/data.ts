@@ -86,7 +86,7 @@ export const projectsData = [
     tags: ["EJS", "Node.js", "Express", "Mongoose", "MongoDB", "Google OAuth"],
     imageUrl: trailrider,
     githubUrl: "https://github.com/ofshvmin/trail-rider",
-    liveUrl: "https://trail-rider.fly.dev/",
+    liveUrl: "https://trail-riders.fly.dev/",
   },
   {
     title: "Rabbit Hole",
