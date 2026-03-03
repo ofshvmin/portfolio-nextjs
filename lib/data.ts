@@ -2,7 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import newsLingoImg from "@/public/newsLingo.png";
+import newsLingo from '@/public/newslingo.png';
 import rabbitHole from "@/public/rabbithole.png"
 import trailrider from "@/public/trailrider.png"
 import easterwordle from "@/public/easterwordle.png"
@@ -75,7 +75,7 @@ export const projectsData = [
     description:
       "An interactive language learning platform serving foreign language news articles and on-demand word translation. This app was built in collaboration with two other developers.",
     tags: ["React", "Node.js", "MongoDB"],
-    imageUrl: newsLingoImg,
+    imageUrl: newsLingo,
     githubUrl: "https://github.com/ofshvmin/newsLingo-front-end",
     liveUrl: "https://news-lingo.netlify.app/",
   },
