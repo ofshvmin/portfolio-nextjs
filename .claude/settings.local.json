@@ -5,7 +5,8 @@
       "Bash(npm ls:*)",
       "Bash(nvm:*)",
       "Bash(npm run:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
