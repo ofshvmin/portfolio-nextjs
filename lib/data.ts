@@ -6,6 +6,7 @@ import newsLingo from '@/public/newslingo.png';
 import rabbitHole from "@/public/rabbithole.png"
 import trailrider from "@/public/trailrider.png"
 import easterwordle from "@/public/easterwordle.png"
+import chemungSpeedrome from "@/public/chemungspeedrome.png"
 
 export const links = [
   {
@@ -70,6 +71,15 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Chemung Speedrome",
+    description:
+      "The official website for a Finger Lakes short-track racetrack, featuring race schedules, results, driver standings, and sponsor showcases, plus a custom admin dashboard for managing content. Server-rendered for performance and deployed on Vercel.",
+    tags: ["Astro", "TypeScript", "Tailwind", "Vercel"],
+    imageUrl: chemungSpeedrome,
+    githubUrl: "https://github.com/ofshvmin/racetrack-spa",
+    liveUrl: "https://chemungspeedrome.com",
+  },
   {
     title: "NewsLingo",
     description:
