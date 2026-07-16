@@ -1,140 +1,145 @@
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import newsLingo from '@/public/newslingo.png';
-import rabbitHole from "@/public/rabbithole.png"
-import trailrider from "@/public/trailrider.png"
-import easterwordle from "@/public/easterwordle.png"
 import chemungSpeedrome from "@/public/chemungspeedrome.png"
+import newsLingo from "@/public/newslingo.png"
+import type { NavLink, Service, Project } from "./types"
 
-export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
-] as const;
+export const navLinks: NavLink[] = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Work", href: "/work" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+]
 
-export const experiencesData = [
+export const servicesData: Service[] = [
   {
-    title: "Graduated bootcamp",
-    location: "General Assembly, Remote",
+    title: "Custom Web Applications",
     description:
-      "I graduated after 3 months of intensive study. I immediately began freelance work as a full-stack developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2023",
+      "Full-stack web applications tailored to your business processes. From internal tools to customer-facing platforms, we build scalable solutions with modern frameworks and cloud infrastructure.",
+    icon: "code",
+    features: [
+      "React & Next.js frontends",
+      "REST & GraphQL APIs",
+      "Database design & integration",
+      "Cloud deployment & CI/CD",
+    ],
   },
   {
-    title: "Full-Stack Developer",
-    location: "Freelance, Finger Lakes Region, NY",
+    title: "Mobile Applications",
     description:
-    "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2023 - present",
+      "Cross-platform mobile apps that deliver native performance. We use React Native to build for iOS and Android from a single codebase, reducing cost and time to market.",
+    icon: "smartphone",
+    features: [
+      "React Native development",
+      "iOS & Android deployment",
+      "Push notifications & offline support",
+      "App Store submission",
+    ],
   },
   {
-    title: "Product Manager",
-    location: "Bank of NY Mellon, New York, NY",
+    title: "Business Websites",
     description:
-      "I worked as a product manager under the agile framework for 3 years at the Bank of New York Mellon, where I planned development of new software from prioritization, writing requirements, obtaining sign-off from key stakeholders, executing testing, and managing implementation. I continued to leverage my knowledge of SQL and began to learn JavaScript, partnering with our engineers to build client-facing APIs to provide real-time data on market events and client transactions. I am still employed by the bank but am currently on leave of absence while I pursue a transition to the engineering side of things.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2023",
+      "Fast, polished websites that establish your online presence. Static-first architecture means lightning-fast load times, strong SEO, and low hosting costs.",
+    icon: "globe",
+    features: [
+      "Marketing & landing pages",
+      "Content management systems",
+      "SEO optimization",
+      "Analytics integration",
+    ],
   },
   {
-    title: "Head of Asset Servicing Client Services",
-    location: "Goldman Sachs & Co., New York, NY",
+    title: "Technical Consulting",
     description:
-      "At Goldman I developed deep expertise in the complexities of financial operations at the highest level.  Building on that technical expertise, I undertook several initiatives to modernize our client service offerings through strategic investment in technology enhancements, while using the same opportunities to enhance controls around operational risk. It was in this role that I first got a taste for coding by learning SQL to undertake data analysis independent of our engineering teams.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2014 - 2020",
+      "Strategic guidance for teams navigating technical decisions. We help you choose the right stack, architect for scale, and establish engineering best practices.",
+    icon: "lightbulb",
+    features: [
+      "Architecture review",
+      "Technology selection",
+      "Performance audits",
+      "Team workflow optimization",
+    ],
   },
-] as const;
+]
 
-export const projectsData = [
+export const projectsData: Project[] = [
   {
     title: "Chemung Speedrome",
     description:
-      "The official website for a Finger Lakes short-track racetrack, featuring race schedules, results, driver standings, and sponsor showcases, plus a custom admin dashboard for managing content. Server-rendered for performance and deployed on Vercel.",
+      "Official website for a Finger Lakes short-track racetrack. Features race schedules, results, driver standings, sponsor showcases, and a custom admin dashboard.",
     tags: ["Astro", "TypeScript", "Tailwind", "Vercel"],
     imageUrl: chemungSpeedrome,
     githubUrl: "https://github.com/ofshvmin/racetrack-spa",
     liveUrl: "https://chemungspeedrome.com",
+    featured: true,
   },
   {
     title: "NewsLingo",
     description:
-      "An interactive language learning platform serving foreign language news articles and on-demand word translation. This app was built in collaboration with two other developers.",
+      "Interactive language learning platform serving foreign language news articles with on-demand word translation. Built in collaboration with two other developers.",
     tags: ["React", "Node.js", "MongoDB"],
     imageUrl: newsLingo,
     githubUrl: "https://github.com/ofshvmin/newsLingo-front-end",
     liveUrl: "https://news-lingo.netlify.app/",
+    featured: true,
   },
   {
-    title: "Trail Rider",
+    title: "Very Important Pickles",
     description:
-    "A booking system for a local business.",
-    tags: ["EJS", "Node.js", "Express", "Mongoose", "MongoDB", "Google OAuth"],
-    imageUrl: trailrider,
-    githubUrl: "https://github.com/ofshvmin/trail-rider",
-    liveUrl: "https://trail-riders.fly.dev/",
+      "Marketing website for a multidisciplinary advisory and execution practice based in Miami. Statically prerendered editorial site with a serverless contact form, organized content architecture across five practice areas, and a warm, editorial design system.",
+    tags: ["Astro 5", "TypeScript", "Tailwind CSS", "Resend", "Vercel"],
+    imageUrl: null,
+    liveUrl: "https://veryimportantpickles.com",
+    featured: false,
   },
   {
-    title: "Rabbit Hole",
+    title: "Grimoire",
     description:
-      "A social media app inspired by TikTok.",
-    tags: ["React", "TypeScript", "Next.js"],
-    imageUrl: rabbitHole,
-    githubUrl: "https://github.com/ofshvmin/rabbit-hole-front-end",
-    liveUrl: "https://rabbity-hole.netlify.app/",
+      "Full-stack Magic: The Gathering Commander deck builder with AI-powered deck generation. Users import their card collection, select a commander, and get a complete legal deck with synergy analysis, combo detection, mana probability calculations, and natural-language AI deck briefs powered by Claude. Features multi-format import, playtest simulation, and budget-upgrade suggestions.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "FastAPI",
+      "Python",
+      "MongoDB",
+      "Fly.io",
+      "Vercel",
+    ],
+    imageUrl: null,
+    githubUrl: "https://github.com/ofshvmin/mtg-deckbuilder",
+    liveUrl: "https://mtg-deckbuilder-bice.vercel.app",
+    featured: false,
   },
-  {
-    title: "Wordle: Easter Edition",
-    description:
-      "A wordle clone styled in the theme of Easter.",
-    tags: ["JavaScript", "HTML", "CSS"],
-    imageUrl: easterwordle,
-    githubUrl: "https://github.com/ofshvmin/wordle",
-    liveUrl: "https://easter-wordle.netlify.app/",
-  },
-] as const;
+]
 
-export const skillsData = [
+export const technologiesData = [
   "HTML",
   "CSS",
   "JavaScript",
   "TypeScript",
   "React",
+  "React Native",
   "Next.js",
+  "Astro",
   "Node.js",
+  "Python",
+  "FastAPI",
   "Git",
   "Tailwind",
   "Prisma",
   "MongoDB",
-  "GraphQL",
-  "Apollo",
-  "Express",
   "PostgreSQL",
-  "Python",
-  "Django",
+  "GraphQL",
+  "Docker",
+  "AWS",
+  "Vercel",
   "Framer Motion",
-] as const;
+] as const
+
+export const companyInfo = {
+  name: "DankoDev, LLC",
+  email: "info@dankodev.com",
+  location: "Finger Lakes Region, NY",
+  github: "https://github.com/ofshvmin",
+  linkedin: "https://www.linkedin.com/in/daniel-g-mathews",
+} as const
