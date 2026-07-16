@@ -1,13 +1,11 @@
-'use client'
+"use client"
 
-import { projectsData } from '@/lib/data'
-import React, { useRef } from 'react'
-import Image from 'next/image'
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
-import { FaGithub } from 'react-icons/fa'
-import { BsBoxArrowUpRight } from 'react-icons/bs'
-
-type ProjectProps = (typeof projectsData)[number]
+import React, { useRef } from "react"
+import Image from "next/image"
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
+import { FaGithub } from "react-icons/fa"
+import { BsBoxArrowUpRight } from "react-icons/bs"
+import type { Project as ProjectType } from "@/lib/types"
 
 export default function Project({
   title,
@@ -16,79 +14,105 @@ export default function Project({
   imageUrl,
   githubUrl,
   liveUrl,
-}: ProjectProps) {
+}: ProjectType) {
   const ref = useRef<HTMLDivElement>(null)
   const shouldReduceMotion = useReducedMotion()
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.33 1"]
+    offset: ["0 1", "1.33 1"],
   })
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [1, 1] : [0.8, 1])
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? [1, 1] : [0.6, 1])
+  const scaleProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [1, 1] : [0.8, 1]
+  )
+  const opacityProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [1, 1] : [0.6, 1]
+  )
 
   return (
     <motion.div
-      ref={ref} 
+      ref={ref}
       style={{
         scale: scaleProgress,
-        opacity: opacityProgess,
+        opacity: opacityProgress,
       }}
-      className='group mb-3 sm:mb-8 last:mb-0'
+      className="group mb-3 sm:mb-8 last:mb-0"
     >
       <article
-        className='bg-gradient-to-br from-white to-purple-50/40 max-w-[42rem] border border-gray-200/70 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 shadow-md hover:shadow-lg hover:border-gray-300/80 transition-all sm:group-even:pl-8 dark:text-white dark:from-white/[0.05] dark:to-white/[0.02] dark:hover:from-white/[0.08] dark:hover:to-white/[0.04] dark:border-white/[0.06]'>
-        <div className='pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[20rem]'>
-          <h3 className='text-2xl font-semibold'>{title}</h3>
-          <p className='mt-2 text-xs leading-relaxed text-gray-500 dark:text-white/50'>{description}</p>
-          <ul className='flex flex-wrap mt-4 gap-2 sm:mt-auto'>
+        className={`bg-brand-surface max-w-[42rem] border border-brand-border rounded-lg overflow-hidden relative mb-3 sm:mb-8 last:mb-0 shadow-md hover:shadow-lg hover:border-brand-border-hover transition-all ${
+          imageUrl ? "sm:pr-8 sm:h-[20rem] sm:group-even:pl-8" : "p-6"
+        }`}
+      >
+        <div
+          className={`pt-4 pb-7 px-5 flex flex-col h-full ${
+            imageUrl
+              ? "sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] sm:group-even:ml-[20rem]"
+              : ""
+          }`}
+        >
+          <h3 className="text-2xl font-semibold text-brand-text-primary">
+            {title}
+          </h3>
+          <p className="mt-2 text-xs leading-relaxed text-brand-text-secondary">
+            {description}
+          </p>
+          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
             {tags.map((tag, index) => (
               <li
                 key={index}
-                className='bg-black/[0.7] px-2.5 py-1 text-[0.6rem] uppercase tracking-wider text-white rounded-full dark:text-white/70'
+                className="bg-brand-accent-subtle text-brand-accent px-2.5 py-1 text-[0.6rem] uppercase tracking-wider rounded-full"
               >
                 {tag}
               </li>
             ))}
           </ul>
-          <div className='flex gap-3 mt-3'>
-            <a
-              href={githubUrl}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`${title} GitHub repository`}
-              className='text-gray-600 group-hover:scale-125 group-hover:text-gray-900 dark:text-white/60 dark:group-hover:text-white transition-all text-xl'
-            >
-              <FaGithub />
-            </a>
-            <a
-              href={liveUrl}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`${title} live demo`}
-              className='text-gray-600 group-hover:scale-125 group-hover:text-gray-900 dark:text-white/60 dark:group-hover:text-white transition-all text-xl'
-            >
-              <BsBoxArrowUpRight />
-            </a>
+          <div className="flex gap-3 mt-3">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${title} GitHub repository`}
+                className="text-brand-text-muted hover:text-brand-accent transition text-xl"
+              >
+                <FaGithub />
+              </a>
+            )}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${title} live site`}
+                className="text-brand-text-muted hover:text-brand-accent transition text-xl"
+              >
+                <BsBoxArrowUpRight />
+              </a>
+            )}
           </div>
         </div>
 
-        <Image 
-          src={imageUrl} 
-          alt={title}
-          quality={95}
-          className='absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-          transition 
-          group-hover:scale-105
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          group-hover:-rotate-2
-          group-even:group-hover:translate-x-3
-          group-even:group-hover:translate-y-3
-          group-even:group-hover:rotate-2
-          group-even:right-[initial] group-even:-left-40'
-        />
+        {imageUrl && (
+          <Image
+            src={imageUrl}
+            alt={title}
+            quality={95}
+            className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+            transition
+            group-hover:scale-105
+            group-hover:-translate-x-3
+            group-hover:translate-y-3
+            group-hover:-rotate-2
+            group-even:group-hover:translate-x-3
+            group-even:group-hover:translate-y-3
+            group-even:group-hover:rotate-2
+            group-even:right-[initial] group-even:-left-40"
+          />
+        )}
       </article>
-
     </motion.div>
   )
 }

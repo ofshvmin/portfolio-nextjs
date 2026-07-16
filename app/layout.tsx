@@ -1,18 +1,21 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Header from '@/components/header'
-import ActiveSectionContextProvider from '@/context/active-section'
-import { Toaster } from 'react-hot-toast'
-import Footer from '@/components/footer'
-import ThemeSwitch from '@/components/theme-switch'
-import ThemeContextProvider from '@/context/theme-context'
-import { Analytics } from '@vercel/analytics/react'
+import "./globals.css"
+import { Inter } from "next/font/google"
+import Header from "@/components/header"
+import { Toaster } from "react-hot-toast"
+import Footer from "@/components/footer"
+import ThemeSwitch from "@/components/theme-switch"
+import ThemeContextProvider from "@/context/theme-context"
+import { Analytics } from "@vercel/analytics/react"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: 'Daniel Mathews | Personal Portfolio',
-  description: 'Daniel Mathews is a full stack developer',
+  title: {
+    default: "DankoDev",
+    template: "%s | DankoDev",
+  },
+  description:
+    "DankoDev, LLC builds custom software for businesses. Web apps, mobile apps, websites, and technical consulting.",
 }
 
 export default function RootLayout({
@@ -21,24 +24,39 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='scroll-smooth'>
-      <body 
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
+    <html lang="en" className="dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else if (theme === 'dark' || !theme) {
+                  document.documentElement.classList.add('dark');
+                } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        className={`${inter.className} bg-brand-background text-brand-text-primary relative pt-28 sm:pt-36`}
+      >
+        <div className="bg-[#DBEAFE] fixed top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#1E3A5F]" />
+        <div className="bg-[#E0E7FF] fixed top-[-1rem] -z-10 right-[35rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#1A1A3E]" />
 
-        <div className=' bg-[#fbe2e3] fixed top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w[68.75rem] dark:bg-[#946263]'></div>
-
-        <div className=' bg-[#dbd7fb] fixed top-[-1rem] -z-10 right-[35rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w[68.75rem] md:left-[33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#976394]'></div>
-
-      <ThemeContextProvider>
-        <ActiveSectionContextProvider>
+        <ThemeContextProvider>
           <Header />
           {children}
-          <Toaster position='top-right' />
+          <Toaster position="top-right" />
           <Footer />
           <ThemeSwitch />
-        </ActiveSectionContextProvider>
-      </ThemeContextProvider>
-      <Analytics />
+        </ThemeContextProvider>
+        <Analytics />
       </body>
     </html>
   )
